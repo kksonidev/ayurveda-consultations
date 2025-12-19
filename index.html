@@ -1,339 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ayurveda Consultations | Sri Sri Tattva</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayurveda Consultations</title>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --green: #2f6b4f;
-  --light-green: #e8f3ed;
-  --gold: #c9a14a;
-  --dark: #1e1e1e;
-  --muted: #6b6b6b;
-  --white: #ffffff;
+:root{
+  --green:#2f6b4f;
+  --dark-green:#1f4f39;
+  --gold:#c78a2b;
+  --bg:#f6f1e8;
+  --card:#ffffff;
+  --text:#1e1e1e;
+  --muted:#6b6b6b;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,sans-serif;
+  color:var(--text);
+  background:var(--bg);
 }
 
-body {
-  font-family: Inter, sans-serif;
-  color: var(--dark);
-  line-height: 1.6;
-  background: #fff;
+/* HEADER */
+header{
+  background:#fff;
+  border-bottom:1px solid #eee;
 }
-
-img {
-  max-width: 100%;
-  display: block;
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-
-.container {
-  max-width: 1140px;
-  margin: auto;
-  padding: 64px 20px;
+.nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
 }
-
-.center {
-  text-align: center;
+.nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
 }
-
-/* BUTTONS */
-.btn-primary {
-  display: inline-block;
-  background: var(--green);
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.btn-secondary {
-  display: inline-block;
-  margin-top: 14px;
-  background: var(--gold);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 14px;
+.logo{
+  font-weight:700;
+  font-size:22px;
+  color:var(--dark-green);
 }
 
 /* HERO */
-.hero {
-  background: linear-gradient(to right, #f7f3ec, var(--light-green));
+.hero{
+  background:url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover no-repeat;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+.hero-content{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
+  color:#fff;
+}
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:52px;
+  margin-bottom:10px;
+}
+.hero h2{
+  font-size:22px;
+  font-weight:500;
+  margin-bottom:12px;
+}
+.hero p{
+  max-width:520px;
+  margin-bottom:24px;
+}
+.btn{
+  display:inline-block;
+  background:var(--gold);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
-  align-items: center;
+/* SECTION BASE */
+section{
+  padding:70px 20px;
 }
-
-.hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 52px;
-  margin-bottom: 18px;
+.container{
+  max-width:1200px;
+  margin:auto;
 }
-
-.hero p {
-  font-size: 18px;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-
-.hero-image img {
-  border-radius: 22px;
-}
+.center{text-align:center}
 
 /* BENEFITS */
-.benefits {
-  background: var(--light-green);
+.benefits{
+  background:linear-gradient(#f6f1e8,#efe6d4);
+}
+.benefit-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-top:40px;
+}
+.benefit{
+  background:#fff;
+  padding:26px;
+  border-radius:16px;
+  text-align:center;
+}
+.benefit img{
+  width:52px;
+  margin-bottom:12px;
 }
 
-.benefit-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+/* HOW IT WORKS */
+.steps{
+  background:#eef4ee;
 }
-
-.card {
-  background: #fff;
-  padding: 28px;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+.step-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:40px;
 }
-
-.card h3 {
-  margin-bottom: 8px;
-  font-size: 18px;
+.step{
+  background:#e3efdf;
+  padding:26px;
+  border-radius:14px;
 }
-
-/* STEPS */
-.steps h2 {
-  margin-bottom: 40px;
-}
-
-.step-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.step {
-  text-align: center;
-}
-
-.step span {
-  width: 44px;
-  height: 44px;
-  background: var(--green);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-weight: 600;
-  margin-bottom: 14px;
+.step span{
+  background:var(--green);
+  color:#fff;
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-weight:600;
+  margin-bottom:10px;
 }
 
 /* EXPERTS */
-.experts {
-  background: #fafafa;
+.experts-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:40px;
 }
-
-.expert-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 40px;
+.expert{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
 }
-
-.expert-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+.expert img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:12px;
 }
-
-.expert-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: auto;
-  margin-bottom: 14px;
-}
-
-.expert-card h4 {
-  margin-bottom: 4px;
+.small-btn{
+  display:inline-block;
+  margin-top:10px;
+  background:var(--gold);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* CONDITIONS */
-.conditions {
-  background: #fff;
+.conditions{
+  background:#f3ecd8;
+}
+.condition-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+.condition-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:20px;
+}
+.condition{
+  background:#fff;
+  padding:14px;
+  border-radius:10px;
+  font-size:14px;
 }
 
-.condition-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+/* FAQ */
+.faq{
+  background:#f6f1e8;
+}
+.faq-item{
+  background:#fff;
+  padding:16px;
+  border-radius:10px;
+  margin-bottom:12px;
 }
 
-.condition-grid ul {
-  margin: 20px 0 30px;
-}
-
-.condition-grid li {
-  margin-bottom: 8px;
-}
-
-/* FINAL CTA */
-.final-cta {
-  background: var(--green);
-  color: #fff;
-}
-
-.final-cta h2 {
-  font-family: "Playfair Display", serif;
-  margin-bottom: 20px;
+/* CTA */
+.final{
+  background:var(--dark-green);
+  color:#fff;
+  text-align:center;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .hero-grid,
+@media(max-width:900px){
   .benefit-grid,
   .step-grid,
-  .expert-grid,
-  .condition-grid {
-    grid-template-columns: 1fr;
+  .experts-grid,
+  .condition-grid{
+    grid-template-columns:1fr;
   }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .container {
-    padding: 48px 16px;
-  }
+  .hero h1{font-size:36px}
+  .nav ul{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<header>
+  <div class="nav">
+    <div class="logo">SriSri</div>
+    <ul>
+      <li><a href="#">Ayurveda</a></li>
+      <li><a href="#">Consultations</a></li>
+      <li><a href="#">Body</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Restore Balance & Wellness</h1>
-      <p>
-        Personalized 1-on-1 Ayurveda consultations with certified practitioners,
-        tailored to your unique body type (Dosha).
-      </p>
-      <a href="#" class="btn-primary">Book Your Consultation – 40% OFF</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Ayurveda Consultation">
-    </div>
+  <div class="hero-content">
+    <h1>Restore Balance & Wellness</h1>
+    <h2>with Personalized Ayurveda Consultations</h2>
+    <p>Online 1-on-1 sessions with expert Ayurvedic practitioners tailored to your unique body type (Dosha).</p>
+    <a class="btn" href="#">Book Your Consultation Now – 40% OFF</a>
   </div>
 </section>
 
-<!-- BENEFITS -->
 <section class="benefits">
   <div class="container center">
     <h2>Discover the Benefits of Ayurveda</h2>
     <div class="benefit-grid">
-      <div class="card"><h3>Personalized Dosha</h3><p>Understand your mind-body type.</p></div>
-      <div class="card"><h3>Holistic Healing</h3><p>Root-cause approach.</p></div>
-      <div class="card"><h3>Herbal Guidance</h3><p>Diet & lifestyle plans.</p></div>
-      <div class="card"><h3>Ongoing Support</h3><p>Follow-ups for balance.</p></div>
+      <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/869/869636.png"><p>Personalized Dosha Assessment</p></div>
+      <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/2909/2909761.png"><p>Holistic Healing Solutions</p></div>
+      <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png"><p>Herbal & Lifestyle Guidance</p></div>
+      <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/1028/1028591.png"><p>Ongoing Support</p></div>
     </div>
+    <br><a class="btn" href="#">Start My Wellness Journey</a>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="steps">
-  <div class="container center">
-    <h2>How It Works</h2>
+  <div class="container">
+    <h2 class="center">How It Works</h2>
     <div class="step-grid">
-      <div class="step"><span>1</span><h3>Book Slot</h3><p>Choose time & expert</p></div>
-      <div class="step"><span>2</span><h3>Consult</h3><p>Online 1-on-1 session</p></div>
-      <div class="step"><span>3</span><h3>Get Plan</h3><p>Personalized wellness</p></div>
+      <div class="step"><span>1</span><h4>Book Your Spot</h4><p>Select date & expert</p></div>
+      <div class="step"><span>2</span><h4>Consult & Assess</h4><p>Online consultation</p></div>
+      <div class="step"><span>3</span><h4>Get Your Plan</h4><p>Personalized care plan</p></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERTS -->
-<section class="experts">
-  <div class="container center">
-    <h2>Meet Our Experts</h2>
-    <div class="expert-grid">
-      <div class="expert-card">
-        <img src="https://via.placeholder.com/150">
-        <h4>Lokesh Raturi</h4>
-        <p>Ayurveda Pulse Expert</p>
-        <a href="#" class="btn-secondary">Book Now</a>
-      </div>
-      <div class="expert-card">
-        <img src="https://via.placeholder.com/150">
-        <h4>Kumar Bathala</h4>
-        <p>Ayurveda & Yoga</p>
-        <a href="#" class="btn-secondary">Book Now</a>
-      </div>
-      <div class="expert-card">
-        <img src="https://via.placeholder.com/150">
-        <h4>Amrutha Nambiar</h4>
-        <p>Panchakarma</p>
-        <a href="#" class="btn-secondary">Book Now</a>
-      </div>
+<section>
+  <div class="container">
+    <h2 class="center">Meet Our Experts</h2>
+    <div class="experts-grid">
+      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Lokesh Raturi</h4><p>Ayurveda Pulse Expert</p><a class="small-btn">Book 1:1</a></div>
+      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Kumar Bathala</h4><p>Ayurveda & Yoga</p><a class="small-btn">Book 1:1</a></div>
+      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Amrutha Nambiar</h4><p>Panchakarma</p><a class="small-btn">Book 1:1</a></div>
     </div>
   </div>
 </section>
 
-<!-- CONDITIONS -->
 <section class="conditions">
   <div class="container condition-grid">
     <div>
       <h2>Conditions We Help With</h2>
-      <ul>
-        <li>Stress & Anxiety</li>
-        <li>Digestive Issues</li>
-        <li>Sleep Problems</li>
-        <li>Hormonal Balance</li>
-        <li>Weight Management</li>
-      </ul>
-      <a href="#" class="btn-primary">Get My Personalized Plan</a>
+      <div class="condition-list">
+        <div class="condition">Stress & Anxiety</div>
+        <div class="condition">Digestive Issues</div>
+        <div class="condition">Sleep Problems</div>
+        <div class="condition">Hormonal Imbalance</div>
+      </div>
+      <br><a class="btn">Get My Personalized Plan</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1543363363-8c98c5e3e8fb">
+    <img src="https://images.unsplash.com/photo-1543363363-8c98c5e3e8fb" style="border-radius:16px">
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container center">
+<section class="faq">
+  <div class="container">
+    <h2 class="center">Frequently Asked Questions</h2>
+    <div class="faq-item">What happens in a consultation?</div>
+    <div class="faq-item">How long is each session?</div>
+    <div class="faq-item">Is Ayurveda safe?</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
     <h2>Ready to Transform Your Health?</h2>
-    <a href="#" class="btn-primary">Book Your Consultation</a>
+    <a class="btn">Book Your Consultation</a>
   </div>
 </section>
 
