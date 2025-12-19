@@ -10,25 +10,38 @@
 <style>
 :root{
   --green:#2f6b4f;
-  --dark-green:#1f4f39;
-  --gold:#c78a2b;
+  --deep-green:#1f4f39;
+  --gold:#c77b2a;
   --bg:#f6f1e8;
+  --bg-soft:#efe6d4;
   --card:#ffffff;
   --text:#1e1e1e;
   --muted:#6b6b6b;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
   font-family:Inter,sans-serif;
-  color:var(--text);
   background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
+
+img{max-width:100%;display:block}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.center{text-align:center}
 
 /* HEADER */
 header{
   background:#fff;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #e5e5e5;
 }
 .nav{
   max-width:1200px;
@@ -38,44 +51,44 @@ header{
   align-items:center;
   justify-content:space-between;
 }
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--deep-green);
+}
 .nav ul{
   list-style:none;
   display:flex;
-  gap:28px;
+  gap:26px;
 }
 .nav a{
   text-decoration:none;
   color:#333;
   font-weight:500;
 }
-.logo{
-  font-weight:700;
-  font-size:22px;
-  color:var(--dark-green);
-}
 
 /* HERO */
 .hero{
-  background:url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover no-repeat;
   position:relative;
+  background:url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover no-repeat;
 }
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.35);
+  background:linear-gradient(to right, rgba(0,0,0,.55), rgba(0,0,0,.25));
 }
 .hero-content{
   position:relative;
   max-width:1200px;
   margin:auto;
-  padding:100px 20px;
+  padding:90px 20px;
   color:#fff;
 }
 .hero h1{
   font-family:"Playfair Display",serif;
-  font-size:52px;
-  margin-bottom:10px;
+  font-size:50px;
+  margin-bottom:8px;
 }
 .hero h2{
   font-size:22px;
@@ -96,16 +109,6 @@ header{
   font-weight:600;
 }
 
-/* SECTION BASE */
-section{
-  padding:70px 20px;
-}
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-.center{text-align:center}
-
 /* BENEFITS */
 .benefits{
   background:linear-gradient(#f6f1e8,#efe6d4);
@@ -121,82 +124,83 @@ section{
   padding:26px;
   border-radius:16px;
   text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.05);
 }
 .benefit img{
-  width:52px;
+  width:48px;
   margin-bottom:12px;
+}
+.benefits .btn{
+  margin-top:30px;
+}
+
+/* SPLIT SECTION */
+.split{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
 }
 
 /* HOW IT WORKS */
 .steps{
   background:#eef4ee;
 }
-.step-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:40px;
-}
-.step{
-  background:#e3efdf;
+.step-box{
+  background:#e2efe1;
   padding:26px;
   border-radius:14px;
+  margin-bottom:14px;
 }
-.step span{
-  background:var(--green);
-  color:#fff;
+.step-box span{
+  display:inline-flex;
   width:36px;
   height:36px;
-  display:inline-flex;
+  background:var(--green);
+  color:#fff;
   align-items:center;
   justify-content:center;
   border-radius:50%;
   font-weight:600;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 /* EXPERTS */
-.experts-grid{
+.experts{
+  background:#f6f1e8;
+}
+.expert-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:40px;
+  gap:20px;
 }
 .expert{
   background:#fff;
-  padding:22px;
-  border-radius:16px;
+  padding:18px;
+  border-radius:14px;
   text-align:center;
 }
 .expert img{
-  width:100%;
-  border-radius:12px;
-  margin-bottom:12px;
+  border-radius:10px;
+  margin-bottom:10px;
 }
 .small-btn{
   display:inline-block;
-  margin-top:10px;
+  margin-top:8px;
   background:var(--gold);
   color:#fff;
-  padding:10px 16px;
+  padding:8px 14px;
   border-radius:8px;
+  font-size:13px;
   text-decoration:none;
-  font-size:14px;
 }
 
 /* CONDITIONS */
 .conditions{
-  background:#f3ecd8;
+  background:#f0e6cf;
 }
 .condition-grid{
   display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:40px;
-  align-items:center;
-}
-.condition-list{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:16px;
   margin-top:20px;
 }
@@ -205,6 +209,7 @@ section{
   padding:14px;
   border-radius:10px;
   font-size:14px;
+  text-align:center;
 }
 
 /* FAQ */
@@ -218,18 +223,21 @@ section{
   margin-bottom:12px;
 }
 
-/* CTA */
+/* FINAL CTA */
 .final{
-  background:var(--dark-green);
+  background:var(--deep-green);
   color:#fff;
-  text-align:center;
+}
+.final h2{
+  font-family:"Playfair Display",serif;
+  margin-bottom:16px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
   .benefit-grid,
-  .step-grid,
-  .experts-grid,
+  .split,
+  .expert-grid,
   .condition-grid{
     grid-template-columns:1fr;
   }
@@ -259,12 +267,12 @@ section{
     <h1>Restore Balance & Wellness</h1>
     <h2>with Personalized Ayurveda Consultations</h2>
     <p>Online 1-on-1 sessions with expert Ayurvedic practitioners tailored to your unique body type (Dosha).</p>
-    <a class="btn" href="#">Book Your Consultation Now – 40% OFF</a>
+    <a class="btn">Book Your Consultation Now – 40% OFF</a>
   </div>
 </section>
 
-<section class="benefits">
-  <div class="container center">
+<section class="benefits center">
+  <div class="container">
     <h2>Discover the Benefits of Ayurveda</h2>
     <div class="benefit-grid">
       <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/869/869636.png"><p>Personalized Dosha Assessment</p></div>
@@ -272,45 +280,40 @@ section{
       <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png"><p>Herbal & Lifestyle Guidance</p></div>
       <div class="benefit"><img src="https://cdn-icons-png.flaticon.com/512/1028/1028591.png"><p>Ongoing Support</p></div>
     </div>
-    <br><a class="btn" href="#">Start My Wellness Journey</a>
+    <a class="btn">Start My Wellness Journey</a>
   </div>
 </section>
 
 <section class="steps">
-  <div class="container">
-    <h2 class="center">How It Works</h2>
-    <div class="step-grid">
-      <div class="step"><span>1</span><h4>Book Your Spot</h4><p>Select date & expert</p></div>
-      <div class="step"><span>2</span><h4>Consult & Assess</h4><p>Online consultation</p></div>
-      <div class="step"><span>3</span><h4>Get Your Plan</h4><p>Personalized care plan</p></div>
+  <div class="container split">
+    <div>
+      <h2>How It Works</h2>
+      <div class="step-box"><span>1</span><h4>Book Your Spot</h4><p>Select date & practitioner</p></div>
+      <div class="step-box"><span>2</span><h4>Consult & Assess</h4><p>Online 1-on-1 consultation</p></div>
+      <div class="step-box"><span>3</span><h4>Get Your Plan</h4><p>Personalized wellness plan</p></div>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <h2 class="center">Meet Our Experts</h2>
-    <div class="experts-grid">
-      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Lokesh Raturi</h4><p>Ayurveda Pulse Expert</p><a class="small-btn">Book 1:1</a></div>
-      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Kumar Bathala</h4><p>Ayurveda & Yoga</p><a class="small-btn">Book 1:1</a></div>
-      <div class="expert"><img src="https://via.placeholder.com/300x220"><h4>Amrutha Nambiar</h4><p>Panchakarma</p><a class="small-btn">Book 1:1</a></div>
+    <div>
+      <h2>Meet Our Experts</h2>
+      <div class="expert-grid">
+        <div class="expert"><img src="https://via.placeholder.com/300x180"><h4>Lokesh Raturi</h4><p>Pulse Expert</p><a class="small-btn">Book 1:1</a></div>
+        <div class="expert"><img src="https://via.placeholder.com/300x180"><h4>Kumar Bathala</h4><p>Ayurveda & Yoga</p><a class="small-btn">Book 1:1</a></div>
+        <div class="expert"><img src="https://via.placeholder.com/300x180"><h4>Shilpa BS</h4><p>Ayurveda Therapist</p><a class="small-btn">Book 1:1</a></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="conditions">
-  <div class="container condition-grid">
-    <div>
-      <h2>Conditions We Help With</h2>
-      <div class="condition-list">
-        <div class="condition">Stress & Anxiety</div>
-        <div class="condition">Digestive Issues</div>
-        <div class="condition">Sleep Problems</div>
-        <div class="condition">Hormonal Imbalance</div>
-      </div>
-      <br><a class="btn">Get My Personalized Plan</a>
+  <div class="container center">
+    <h2>Conditions We Help With</h2>
+    <div class="condition-grid">
+      <div class="condition">Stress & Anxiety</div>
+      <div class="condition">Digestive Issues</div>
+      <div class="condition">Sleep Problems</div>
+      <div class="condition">Hormonal Imbalance</div>
     </div>
-    <img src="https://images.unsplash.com/photo-1543363363-8c98c5e3e8fb" style="border-radius:16px">
+    <br><a class="btn">Get My Personalized Plan</a>
   </div>
 </section>
 
@@ -323,7 +326,7 @@ section{
   </div>
 </section>
 
-<section class="final">
+<section class="final center">
   <div class="container">
     <h2>Ready to Transform Your Health?</h2>
     <a class="btn">Book Your Consultation</a>
